@@ -1,3 +1,4 @@
+import logging
 import telebot
 from telebot.types import Message
 
@@ -11,6 +12,7 @@ def reply(message):
     text = message.text.lower()
     for marco in SYNONYMS:
         if marco in text:
+            logging.info("Reply to " + message)
             bot.send_sticker(message.chat.id, open("sticker.webp", "rb"), message.message_id)
             break
 
