@@ -12,7 +12,7 @@ def reply(message):
     text = message.text.lower()
     for marco in SYNONYMS:
         if marco in text:
-            logging.info("Reply to " + message)
+            logging.info("Reply to " + str(message))
             bot.send_sticker(message.chat.id, open("sticker.webp", "rb"), message.message_id)
             break
 
